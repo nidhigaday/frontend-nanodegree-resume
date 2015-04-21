@@ -213,3 +213,11 @@ span {
     display: block;
   }
 }
+
+.flex-box a{
+    display: inline;
+}
+
+.flex-box a:hover {
+  color: #f94;
+  }

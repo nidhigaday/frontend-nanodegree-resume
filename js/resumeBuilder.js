@@ -6,12 +6,12 @@ var bio = {                                                // JSON Object data
     { "mobile": "647 470 2686",
     "email":"nidhi.gaday@gmail.com",
     "github": "nidhigaday",
-    "twitter" : "@NidhiGaday",
+    "linkedin" : "NidhiGaday",
     "location": "Toronto"
     },
     "message": "Welcome to my resume.",
     "skills": [" awesomeness", " Web designing", " HTML"],
-    "bioPic": "images/fry.jpg"
+    "bioPic": "images/propic.png"
   };
 
 // Top Header
@@ -21,7 +21,7 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio["role"]);
 var formattedMobile = HTMLmobile.replace("%data%", bio["contacts"]["mobile"]);
 var formattedEmail = HTMLemail.replace("%data%", bio["contacts"]["email"]);
 var formattedGitHub = HTMLgithub.replace("%data%", bio["contacts"]["github"]);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio["contacts"]["twitter"]);
+var formattedLinkedIn = HTMLinkedin.replace("%data%", bio["contacts"]["linkedin"]);
 var formattedLocation = HTMLlocation.replace("%data%", bio["contacts"]["location"]);
 var formattedPic = HTMLbioPic.replace("%data%", bio["bioPic"]);
 
@@ -33,7 +33,7 @@ $("#header").prepend(formattedName);
 $("#topContacts").append(formattedMobile);
 $("#topContacts").append(formattedEmail);
 $("#topContacts").append(formattedGitHub);
-$("#topContacts").append(formattedTwitter);
+$("#topContacts").append(formattedLinkedIn);
 $("#topContacts").append(formattedLocation);
 
 $("#header").append(formattedPic);
@@ -80,13 +80,15 @@ var work = {
    "employer" : "Pearson Embanet",
    "years" : "Aug 2014 - Present",
    "city" : "Toronto",
+   "website" : "http://embanet.com/",
    "description" : "Assisted users taking courses Online"
  },
  {
-   "title" : "Community MObilizer",
+   "title" : "Community Mobilizer",
    "employer" : "Social Services Network",
    "years" : "April 2012 - Feb 2014",
    "city" : "Markham",
+   "website" : "http://www.socialservicesnetwork.org/",
    "description" : "Assisted senior personals in learning use of computers. Recognized and appreciated for participation in various community services."
  }]
 };
@@ -98,6 +100,7 @@ for (job in work.jobs)
   {
     $("#workExperience").append(HTMLworkStart);
     var workemployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+   // var workurl = ;
     var worktitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var workEmployerTitle = workemployer + worktitle;
 
@@ -152,7 +155,7 @@ $("#education").append(HTMLschoolStart);
 
 for (school in education.schools)
   {
-    
+
     var schoolName = HTMLschoolName.replace("%data%", education.schools[school].school);
     var schoolCourse = HTMLschoolDegree.replace("%data%", education.schools[school].study);
     var schoolNameCourse = schoolName + schoolCourse;
@@ -171,7 +174,7 @@ $(".education-entry:last").append(HTMLonlineClasses);
 
 for (course in education.OnlineCourses)
   {
-    
+
     var schoolOnlineName = HTMLonlineSchool.replace("%data%", education.OnlineCourses[course].school);
     var schoolOnlineCourse = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].study);
     var schoolOnlineNameCourse = schoolOnlineCourse + schoolOnlineName;
@@ -222,7 +225,7 @@ var projects = {
     "title": "Portfolio",
     "dates": "2014",
     "description": "For this portfolio I used Twitter's Bootstrap Framework. The HTML and CSS codes were validated. Some images used in the webpage were taken by me and others were copied from Google resources. I have user Google Fonts for this portfolio. Also I have linked some of my basic work tot he page.",
-    "images" : "images/portfolio.jpg"
+    "image" : "images/project.png"
   }],
 
   // below is the function Object in Project object
@@ -233,7 +236,7 @@ var projects = {
     {
       $("#projects").append(HTMLprojectStart);
       var projectName = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-    
+
       $(".project-entry:last").append(projectName);
 
       var projectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
@@ -254,3 +257,15 @@ projects.display();
 
 //displaying locations where I lived on Google Map in Resume
 $("#mapDiv").append(googleMap);
+
+
+
+//----------------------------------------------------------------------------------
+
+//displaying bottom contacts
+
+$("#footerContacts").append(formattedMobile);
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedGitHub);
+$("#footerContacts").append(formattedLinkedIn);
+$("#footerContacts").append(formattedLocation);
