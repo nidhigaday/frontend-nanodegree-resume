@@ -5,12 +5,12 @@ var bio = {
     "name":"Nidhi Gaday",
     "role":"Web Developer",
     //JSON comtacts object within bio object
-    "contacts":
-    { "mobile": "647 470 2686",
-    "email":"nidhi.gaday@gmail.com",
-    "github": "nidhigaday",
-    "linkedin" : "NidhiGaday",
-    "location": "Toronto"
+    "contacts": {
+      "mobile": "647 470 2686",
+      "email":"nidhi.gaday@gmail.com",
+      "github": "nidhigaday",
+      "linkedin" : "NidhiGaday",
+      "location": "Toronto"
     },
     "message": "Welcome to my resume.",
     "skills": ["HTML", "CSS", "Javascript", "Customer dealing skills"],
@@ -130,18 +130,18 @@ work.display();
 var education = {
 "schools" : [
   {
-		"school":"Centennial College",
+    "school":"Centennial College",
     "study": "Computer System Technology : Networking Diploma",
-		"years": "Jan 2012 - Dec 2013",
+    "years": "Jan 2012 - Dec 2013",
     "city" : "Toronto"
   },
-	{
-		"school":"Punjab Technical University",
+  {
+    "school":"Punjab Technical University",
     "study": "Bachelor's degree : Information Technology",
     "years": "2007 - 2011",
-		"city" : "Chandigarh"
-	}
-	],
+    "city" : "Chandigarh"
+  }
+  ],
 "OnlineCourses" : [
   {
     "study":"Front End Web Developer NanoDegree",
@@ -211,7 +211,7 @@ var projects = {
     "title": "Portfolio",
     "dates": "2014",
     "description": "For this portfolio I used Twitter's Bootstrap Framework. The HTML and CSS codes were validated. Some images used in the webpage were taken by me and others were copied from Google resources. I have user Google Fonts for this portfolio. Also I have linked some of my basic work tot he page.",
-    "image" : "images/project.png",
+    "image" : "images/project.png"
   }],
 
   // below is the function Object in Project object
