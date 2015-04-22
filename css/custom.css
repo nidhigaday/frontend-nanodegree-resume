@@ -1,0 +1,16 @@
+.online-education, .link, .date-text, .location-text  {
+    padding: 5px 15px 5px 0;
+}
+
+.break {
+    border-bottom: 1px solid #c0c0c0;
+    margin-top: 5px;
+}
+
+.project-entry .date-text {
+    float: none;
+
+}
+
+
+

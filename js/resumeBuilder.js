@@ -10,7 +10,7 @@ var bio = {                                                // JSON Object data
     "location": "Toronto"
     },
     "message": "Welcome to my resume.",
-    "skills": [" awesomeness", " Web designing", " HTML"],
+    "skills": ["HTML", "CSS", "Javascript", "Customer dealing skills"],
     "bioPic": "images/propic.png"
   };
 
@@ -49,6 +49,8 @@ var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
 $("#skills").append(formattedSkills);
 var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
 $("#skills").append(formattedSkills);
+var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
+$("#skills").append(formattedSkills);
 }
 
 
@@ -81,7 +83,7 @@ var work = {
    "years" : "Aug 2014 - Present",
    "city" : "Toronto",
    "website" : "http://embanet.com/",
-   "description" : "Assisted users taking courses Online"
+   "description" : "Technical assistance for users taking online courses."
  },
  {
    "title" : "Community Mobilizer",
@@ -100,7 +102,7 @@ for (job in work.jobs)
   {
     $("#workExperience").append(HTMLworkStart);
     var workemployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-   // var workurl = ;
+
     var worktitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var workEmployerTitle = workemployer + worktitle;
 
@@ -141,7 +143,7 @@ var education = {
 	],
 "OnlineCourses" : [
   {
-    "study":"Front End Web Developer : NanoDegree",
+    "study":"Front End Web Developer NanoDegree",
     "school": "Udacity",
     "years": "Nov 2014 - Present",
     "url": "https://www.udacity.com/"
@@ -152,26 +154,25 @@ var education = {
 function displayEducation()
 {
 $("#education").append(HTMLschoolStart);
-
 for (school in education.schools)
   {
-
     var schoolName = HTMLschoolName.replace("%data%", education.schools[school].school);
     var schoolCourse = HTMLschoolDegree.replace("%data%", education.schools[school].study);
     var schoolNameCourse = schoolName + schoolCourse;
 
     $(".education-entry:last").append(schoolNameCourse);
+    /*if(education.schools[school].school) {
 
+    }*/
     var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].years);
     var schoolcity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
 
     $(".education-entry:last").append(schoolDates);
     $(".education-entry:last").append(schoolcity);
-
+    $(".education-entry:last").append(HTMLschoolBreak);
   }
 
 $(".education-entry:last").append(HTMLonlineClasses);
-
 for (course in education.OnlineCourses)
   {
 
@@ -225,7 +226,7 @@ var projects = {
     "title": "Portfolio",
     "dates": "2014",
     "description": "For this portfolio I used Twitter's Bootstrap Framework. The HTML and CSS codes were validated. Some images used in the webpage were taken by me and others were copied from Google resources. I have user Google Fonts for this portfolio. Also I have linked some of my basic work tot he page.",
-    "image" : "images/project.png"
+    "image" : "images/project.png",
   }],
 
   // below is the function Object in Project object
