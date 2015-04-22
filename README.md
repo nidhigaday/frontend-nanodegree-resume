@@ -8,4 +8,4 @@
 ###3. http://json.org/ and https://developer.mozilla.org - for JSON
 ###4. jsonlint.com/ - to validate code
 
-##I have also modified style.css and added custom.css for modification.
+##I have also modified style.css and added custom.css for new design.
