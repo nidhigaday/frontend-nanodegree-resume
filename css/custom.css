@@ -9,8 +9,9 @@
 
 .project-entry .date-text {
     float: none;
-
 }
 
-
+p {
+    padding: 0;
+}
 

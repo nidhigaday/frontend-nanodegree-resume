@@ -1,8 +1,11 @@
-//biography
-var bio = {                                                // JSON Object data
+// JSON Object data
+// biography
+
+var bio = {
     "name":"Nidhi Gaday",
     "role":"Web Developer",
-    "contacts":                     //JSON comtacts object within bio object
+    //JSON comtacts object within bio object
+    "contacts":
     { "mobile": "647 470 2686",
     "email":"nidhi.gaday@gmail.com",
     "github": "nidhigaday",
@@ -17,7 +20,8 @@ var bio = {                                                // JSON Object data
 // Top Header
 var formattedName = HTMLheaderName.replace("%data%", bio["name"]);
 var formattedRole = HTMLheaderRole.replace("%data%", bio["role"]);
-//Contact info
+
+// Contact info
 var formattedMobile = HTMLmobile.replace("%data%", bio["contacts"]["mobile"]);
 var formattedEmail = HTMLemail.replace("%data%", bio["contacts"]["email"]);
 var formattedGitHub = HTMLgithub.replace("%data%", bio["contacts"]["github"]);
@@ -39,18 +43,15 @@ $("#topContacts").append(formattedLocation);
 $("#header").append(formattedPic);
 $("#header").append(formattedmsg);
 
+// skills informarion
+
 if(bio.skills.length>0)
 {
 $("#header").append(HTMLskillsStart);
-
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-$("#skills").append(formattedSkills);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
-$("#skills").append(formattedSkills);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
-$("#skills").append(formattedSkills);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
-$("#skills").append(formattedSkills);
+  for(var i = 0; i < bio.skills.length; i++) {
+     var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+     $("#skills").append(formattedSkills);
+  }
 }
 
 
@@ -74,10 +75,11 @@ $("#main").append(internationalizeButton);
 
 //---------------------------------------------------------------------------------------------
 
+// JSON Object data
+// work information
 
-//work information
 var work = {
-"jobs" : [{                                        // JSON Object data
+"jobs" : [{
    "title" : "Technical Support",
    "employer" : "Pearson Embanet",
    "years" : "Aug 2014 - Present",
@@ -92,14 +94,11 @@ var work = {
    "city" : "Markham",
    "website" : "http://www.socialservicesnetwork.org/",
    "description" : "Assisted senior personals in learning use of computers. Recognized and appreciated for participation in various community services."
- }]
-};
-
+ }],
 //function to display work data
-function displayWork()
-{
-for (job in work.jobs)
-  {
+"display" : function() {
+  for (job in work.jobs)
+    {
     $("#workExperience").append(HTMLworkStart);
     var workemployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 
@@ -112,20 +111,22 @@ for (job in work.jobs)
     var workcity = HTMLworkLocation.replace("%data%", work.jobs[job].city);
     var workdescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-
     $(".work-entry:last").append(workyear);
     $(".work-entry:last").append(workcity);
     $(".work-entry:last").append(workdescription);
+    }
   }
-}
+};
 
-displayWork();  // calling function to display work
+// calling function to display work
+
+work.display();
 
 
 //--------------------------------------------------------------------------------------------
 
 
-//education information
+// education information
 var education = {
 "schools" : [
   {
@@ -147,35 +148,29 @@ var education = {
     "school": "Udacity",
     "years": "Nov 2014 - Present",
     "url": "https://www.udacity.com/"
-  } ]
-};
+  } ],
 
-//function to display education data
-function displayEducation()
-{
-$("#education").append(HTMLschoolStart);
-for (school in education.schools)
-  {
+// function to display education data
+"display" : function() {
+  $("#education").append(HTMLschoolStart);
+  for (school in education.schools)
+    {
     var schoolName = HTMLschoolName.replace("%data%", education.schools[school].school);
     var schoolCourse = HTMLschoolDegree.replace("%data%", education.schools[school].study);
     var schoolNameCourse = schoolName + schoolCourse;
 
     $(".education-entry:last").append(schoolNameCourse);
-    /*if(education.schools[school].school) {
 
-    }*/
     var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].years);
     var schoolcity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
 
     $(".education-entry:last").append(schoolDates);
     $(".education-entry:last").append(schoolcity);
     $(".education-entry:last").append(HTMLschoolBreak);
-  }
-
-$(".education-entry:last").append(HTMLonlineClasses);
-for (course in education.OnlineCourses)
-  {
-
+    }
+  $(".education-entry:last").append(HTMLonlineClasses);
+  for (course in education.OnlineCourses)
+    {
     var schoolOnlineName = HTMLonlineSchool.replace("%data%", education.OnlineCourses[course].school);
     var schoolOnlineCourse = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].study);
     var schoolOnlineNameCourse = schoolOnlineCourse + schoolOnlineName;
@@ -187,12 +182,12 @@ for (course in education.OnlineCourses)
 
     $(".education-entry:last").append(schoolOnlineDates);
     $(".education-entry:last").append(schoolOnlineUrl);
+    }
   }
-}
+};
 
-
-displayEducation();// calling function to display education
-
+// calling function to display education
+education.display();
 
 //--------------------------------------------------------------------------------------------
 
@@ -206,16 +201,6 @@ function locationizer(work_obj)
   }
   return loc;
 }
-   /* var myLocations = [];
-    for (job in work_obj.jobs)
-    {
-        var place = work_obj.jobs[job].location;
-        myLocations.push(place);
-    }
-    return myLocations;*/
-
-//console.log(locationizer(work));
-
 
 //--------------------------------------------------------------------------------------------
 
@@ -251,19 +236,18 @@ var projects = {
   }
 };
 
+// function called to display all projects
 projects.display();
 
 //----------------------------------------------------------------------------------
 
 
-//displaying locations where I lived on Google Map in Resume
+// displaying locations where I lived on Google Map in Resume
 $("#mapDiv").append(googleMap);
-
-
 
 //----------------------------------------------------------------------------------
 
-//displaying bottom contacts
+// displaying bottom contacts
 
 $("#footerContacts").append(formattedMobile);
 $("#footerContacts").append(formattedEmail);
