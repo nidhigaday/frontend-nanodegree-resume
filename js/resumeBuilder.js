@@ -101,9 +101,9 @@ var work = {
     {
     $("#workExperience").append(HTMLworkStart);
     var workemployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-
+    var workUrl = HTMLworkUrl.replace("%website%", work.jobs[job].website);
     var worktitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var workEmployerTitle = workemployer + worktitle;
+    var workEmployerTitle = workUrl + workemployer + worktitle;
 
     $(".work-entry:last").append(workEmployerTitle);
 
@@ -132,12 +132,14 @@ var education = {
   {
     "school":"Centennial College",
     "study": "Computer System Technology : Networking Diploma",
+    "url" : "http://www.centennialcollege.ca/",
     "years": "Jan 2012 - Dec 2013",
     "city" : "Toronto"
   },
   {
     "school":"Punjab Technical University",
     "study": "Bachelor's degree : Information Technology",
+    "url" : "http://www.ptu.ac.in/",
     "years": "2007 - 2011",
     "city" : "Chandigarh"
   }
@@ -147,7 +149,7 @@ var education = {
     "study":"Front End Web Developer NanoDegree",
     "school": "Udacity",
     "years": "Nov 2014 - Present",
-    "url": "https://www.udacity.com/"
+    "url": "https://www.udacity.com/course/nd001"
   } ],
 
 // function to display education data
@@ -157,7 +159,8 @@ var education = {
     {
     var schoolName = HTMLschoolName.replace("%data%", education.schools[school].school);
     var schoolCourse = HTMLschoolDegree.replace("%data%", education.schools[school].study);
-    var schoolNameCourse = schoolName + schoolCourse;
+    var schoolURL = HTMLschoolURL.replace("%website%", education.schools[school].url);
+    var schoolNameCourse = schoolURL + schoolName + schoolCourse;
 
     $(".education-entry:last").append(schoolNameCourse);
 
@@ -209,6 +212,7 @@ var projects = {
   "projects":[
   {
     "title": "Portfolio",
+    "url" : "https://github.com/nidhigaday/Sample-Portfolio.git",
     "dates": "2014",
     "description": "For this portfolio I used Twitter's Bootstrap Framework. The HTML and CSS codes were validated. Some images used in the webpage were taken by me and others were copied from Google resources. I have user Google Fonts for this portfolio. Also I have linked some of my basic work tot he page.",
     "image" : "images/project.png"
@@ -221,7 +225,9 @@ var projects = {
     for (project in projects.projects)
     {
       $("#projects").append(HTMLprojectStart);
-      var projectName = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+      var projectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+      var projectLink = HTMLprojectURL.replace("%data%", projects.projects[project].url);
+      var projectName = projectLink + projectTitle;
 
       $(".project-entry:last").append(projectName);
 

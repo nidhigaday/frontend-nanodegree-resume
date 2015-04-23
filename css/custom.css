@@ -1,3 +1,7 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
 .online-education, .link, .date-text, .location-text {
     padding: 5px 15px 5px 0;
 }
@@ -9,5 +13,22 @@
 
 .project-entry .date-text {
     float: none;
+}
+
+.online-education {
+    color: #505050;
+}
+#map {
+    border: 1px solid #999;
+}
+
+.name-style {
+    margin: 5px auto 5px auto;
+    display: block;
+    font-size: 20px;
+}
+
+#letsConnect h2 {
+    color: #000;
 }
 
