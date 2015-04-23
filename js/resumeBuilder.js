@@ -14,46 +14,50 @@ var bio = {
     },
     "message": "Welcome to my resume.",
     "skills": ["HTML", "CSS", "Javascript", "Customer dealing skills"],
-    "bioPic": "images/propic.png"
-  };
+    "bioPic": "images/propic.png",
+    
+    // function to display Bio info
+    display : function() {
+    // Top Header
+        var formattedName = HTMLheaderName.replace("%data%", bio["name"]);
+        var formattedRole = HTMLheaderRole.replace("%data%", bio["role"]);
 
-// Top Header
-var formattedName = HTMLheaderName.replace("%data%", bio["name"]);
-var formattedRole = HTMLheaderRole.replace("%data%", bio["role"]);
+        // Contact info
+        var formattedMobile = HTMLmobile.replace("%data%", bio["contacts"]["mobile"]);
+        var formattedEmail = HTMLemail.replace("%data%", bio["contacts"]["email"]);
+        var formattedGitHub = HTMLgithub.replace("%data%", bio["contacts"]["github"]);
+        var formattedLinkedIn = HTMLinkedin.replace("%data%", bio["contacts"]["linkedin"]);
+        var formattedLocation = HTMLlocation.replace("%data%", bio["contacts"]["location"]);
+        var formattedPic = HTMLbioPic.replace("%data%", bio["bioPic"]);
 
-// Contact info
-var formattedMobile = HTMLmobile.replace("%data%", bio["contacts"]["mobile"]);
-var formattedEmail = HTMLemail.replace("%data%", bio["contacts"]["email"]);
-var formattedGitHub = HTMLgithub.replace("%data%", bio["contacts"]["github"]);
-var formattedLinkedIn = HTMLinkedin.replace("%data%", bio["contacts"]["linkedin"]);
-var formattedLocation = HTMLlocation.replace("%data%", bio["contacts"]["location"]);
-var formattedPic = HTMLbioPic.replace("%data%", bio["bioPic"]);
+        var formattedmsg = HTMLWelcomeMsg.replace("%data%", bio["message"]);
 
-var formattedmsg = HTMLWelcomeMsg.replace("%data%", bio["message"]);
+        $("#header").prepend(formattedRole);
+        $("#header").prepend(formattedName);
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+        $("#topContacts").append(formattedMobile);
+        $("#topContacts").append(formattedEmail);
+        $("#topContacts").append(formattedGitHub);
+        $("#topContacts").append(formattedLinkedIn);
+        $("#topContacts").append(formattedLocation);
 
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedGitHub);
-$("#topContacts").append(formattedLinkedIn);
-$("#topContacts").append(formattedLocation);
+        $("#header").append(formattedPic);
+        $("#header").append(formattedmsg);
 
-$("#header").append(formattedPic);
-$("#header").append(formattedmsg);
+        // skills informarion
 
-// skills informarion
+        if(bio.skills.length>0) {
+            $("#header").append(HTMLskillsStart);
+            for(var i = 0; i < bio.skills.length; i++) {
+                var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+                $("#skills").append(formattedSkills);
+            }
+        }
+    }
+};
 
-if(bio.skills.length>0)
-{
-$("#header").append(HTMLskillsStart);
-  for(var i = 0; i < bio.skills.length; i++) {
-     var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-     $("#skills").append(formattedSkills);
-  }
-}
-
+// calling function to display data
+bio.display();
 
 //---------------------------------------------------------------------------------------------
 
