@@ -4,7 +4,7 @@
 var bio = {
     "name":"Nidhi Gaday",
     "role":"Web Developer",
-    //JSON comtacts object within bio object
+    //JSON contacts object within bio object
     "contacts": {
       "mobile": "647 470 2686",
       "email":"nidhi.gaday@gmail.com",
