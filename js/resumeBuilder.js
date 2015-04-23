@@ -100,7 +100,7 @@ var work = {
    "description" : "Assisted senior personals in learning use of computers. Recognized and appreciated for participation in various community services."
  }],
 //function to display work data
-"display" : function() {
+display : function() {
   for (job in work.jobs)
     {
     $("#workExperience").append(HTMLworkStart);
@@ -157,7 +157,7 @@ var education = {
   } ],
 
 // function to display education data
-"display" : function() {
+display : function() {
   $("#education").append(HTMLschoolStart);
   for (school in education.schools)
     {
@@ -224,7 +224,7 @@ var projects = {
 
   // below is the function Object in Project object
   // everything in Javascript is an Object
-  "display" : function()
+  display : function()
   {
     for (project in projects.projects)
     {
