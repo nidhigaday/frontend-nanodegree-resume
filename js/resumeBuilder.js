@@ -2,14 +2,14 @@
 // biography
 
 var bio = {
-    "name":"Nidhi Gaday",
-    "role":"Web Developer",
+    "name": "Nidhi Gaday",
+    "role": "Web Developer",
     //JSON contacts object within bio object
     "contacts": {
       "mobile": "647 470 2686",
-      "email":"nidhi.gaday@gmail.com",
+      "email": "nidhi.gaday@gmail.com",
       "github": "nidhigaday",
-      "linkedin" : "NidhiGaday",
+      "linkedin": "NidhiGaday",
       "location": "Toronto"
     },
     "message": "Welcome to my resume.",
@@ -17,7 +17,7 @@ var bio = {
     "bioPic": "images/propic.png",
     
     // function to display Bio info
-    display : function() {
+    "display": function() {
     // Top Header
         var formattedName = HTMLheaderName.replace("%data%", bio["name"]);
         var formattedRole = HTMLheaderRole.replace("%data%", bio["role"]);
@@ -83,24 +83,24 @@ $("#main").append(internationalizeButton);
 // work information
 
 var work = {
-"jobs" : [{
-   "title" : "Technical Support",
-   "employer" : "Pearson Embanet",
-   "years" : "Aug 2014 - Present",
-   "city" : "Toronto",
-   "website" : "http://embanet.com/",
-   "description" : "Technical assistance for users taking online courses."
+"jobs": [{
+   "title": "Technical Support",
+   "employer": "Pearson Embanet",
+   "years": "Aug 2014 - Present",
+   "city": "Toronto",
+   "website": "http://embanet.com/",
+   "description": "Technical assistance for users taking online courses."
  },
  {
-   "title" : "Community Mobilizer",
-   "employer" : "Social Services Network",
-   "years" : "April 2012 - Feb 2014",
-   "city" : "Markham",
-   "website" : "http://www.socialservicesnetwork.org/",
-   "description" : "Assisted senior personals in learning use of computers. Recognized and appreciated for participation in various community services."
+   "title": "Community Mobilizer",
+   "employer": "Social Services Network",
+   "years": "April 2012 - Feb 2014",
+   "city": "Markham",
+   "website": "http://www.socialservicesnetwork.org/",
+   "description": "Assisted senior personals in learning use of computers. Recognized and appreciated for participation in various community services."
  }],
 //function to display work data
-display : function() {
+"display": function() {
   for (job in work.jobs)
     {
     $("#workExperience").append(HTMLworkStart);
@@ -132,32 +132,31 @@ work.display();
 
 // education information
 var education = {
-"schools" : [
+"schools": [
   {
-    "school":"Centennial College",
+    "school": "Centennial College",
     "study": "Computer System Technology : Networking Diploma",
-    "url" : "http://www.centennialcollege.ca/",
+    "url": "http://www.centennialcollege.ca/",
     "years": "Jan 2012 - Dec 2013",
-    "city" : "Toronto"
+    "city": "Toronto"
   },
   {
-    "school":"Punjab Technical University",
+    "school": "Punjab Technical University",
     "study": "Bachelor's degree : Information Technology",
-    "url" : "http://www.ptu.ac.in/",
+    "url": "http://www.ptu.ac.in/",
     "years": "2007 - 2011",
-    "city" : "Chandigarh"
+    "city": "Chandigarh"
   }
   ],
-"OnlineCourses" : [
-  {
-    "study":"Front End Web Developer NanoDegree",
+"OnlineCourses": [{
+    "study": "Front End Web Developer NanoDegree",
     "school": "Udacity",
     "years": "Nov 2014 - Present",
     "url": "https://www.udacity.com/course/nd001"
-  } ],
+  }],
 
 // function to display education data
-display : function() {
+"display": function() {
   $("#education").append(HTMLschoolStart);
   for (school in education.schools)
     {
@@ -175,8 +174,8 @@ display : function() {
     $(".education-entry:last").append(schoolcity);
     $(".education-entry:last").append(HTMLschoolBreak);
     }
-  $(".education-entry:last").append(HTMLonlineClasses);
-  for (course in education.OnlineCourses)
+    $(".education-entry:last").append(HTMLonlineClasses);
+    for (course in education.OnlineCourses)
     {
     var schoolOnlineName = HTMLonlineSchool.replace("%data%", education.OnlineCourses[course].school);
     var schoolOnlineCourse = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].study);
@@ -213,18 +212,17 @@ function locationizer(work_obj)
 
 // projects information
 var projects = {
-  "projects":[
-  {
+  "projects": [{
     "title": "Portfolio",
-    "url" : "https://github.com/nidhigaday/Sample-Portfolio.git",
+    "url": "https://github.com/nidhigaday/Sample-Portfolio.git",
     "dates": "2014",
     "description": "For this portfolio I used Twitter's Bootstrap Framework. The HTML and CSS codes were validated. Some images used in the webpage were taken by me and others were copied from Google resources. I have user Google Fonts for this portfolio. Also I have linked some of my basic work tot he page.",
-    "image" : "images/project.png"
+    "image": "images/project.png"
   }],
 
   // below is the function Object in Project object
   // everything in Javascript is an Object
-  display : function()
+  "display": function()
   {
     for (project in projects.projects)
     {
