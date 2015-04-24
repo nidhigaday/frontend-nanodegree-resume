@@ -222,8 +222,7 @@ var projects = {
 
   // below is the function Object in Project object
   // everything in Javascript is an Object
-  "display": function()
-  {
+  "display": function() {
     for (project in projects.projects)
     {
       $("#projects").append(HTMLprojectStart);
