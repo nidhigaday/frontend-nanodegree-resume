@@ -15,7 +15,7 @@ var bio = {
     "message": "Welcome to my resume.",
     "skills": ["HTML", "CSS", "Javascript", "Customer dealing skills"],
     "bioPic": "images/propic.png",
-    
+
     // function to display Bio info
     "display": function() {
     // Top Header
