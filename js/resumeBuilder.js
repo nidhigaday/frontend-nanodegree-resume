@@ -217,7 +217,7 @@ var projects = {
     "url": "https://github.com/nidhigaday/Sample-Portfolio.git",
     "dates": "2014",
     "description": "For this portfolio I used Twitter's Bootstrap Framework. The HTML and CSS codes were validated. Some images used in the webpage were taken by me and others were copied from Google resources. I have user Google Fonts for this portfolio. Also I have linked some of my basic work tot he page.",
-    "image": "images/project.png"
+    "image": "images/project.PNG"
   }],
 
   // below is the function Object in Project object
