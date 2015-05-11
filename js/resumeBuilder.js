@@ -53,6 +53,13 @@ var bio = {
                 $("#skills").append(formattedSkills);
             }
         }
+      //----------------------------------------------------------------------------------
+      // displaying bottom contacts
+        $("#footerContacts").append(formattedMobile);
+        $("#footerContacts").append(formattedEmail);
+        $("#footerContacts").append(formattedGitHub);
+        $("#footerContacts").append(formattedLinkedIn);
+        $("#footerContacts").append(formattedLocation);
     }
 };
 
@@ -252,12 +259,3 @@ projects.display();
 // displaying locations where I lived on Google Map in Resume
 $("#mapDiv").append(googleMap);
 
-//----------------------------------------------------------------------------------
-
-// displaying bottom contacts
-
-$("#footerContacts").append(formattedMobile);
-$("#footerContacts").append(formattedEmail);
-$("#footerContacts").append(formattedGitHub);
-$("#footerContacts").append(formattedLinkedIn);
-$("#footerContacts").append(formattedLocation);
