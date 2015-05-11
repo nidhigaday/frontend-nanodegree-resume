@@ -9,3 +9,5 @@
 ###4. jsonlint.com/ - to validate code
 
 ##I have also made some minor changes in style.css and added custom.css for custom classes.
+
+My resume can be viewed at: http://nidhigaday.github.io/frontend-nanodegree-resume
